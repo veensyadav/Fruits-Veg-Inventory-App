@@ -1,0 +1,9 @@
+<% if (errors !== undefined) { %>
+<div class="errors">
+  <ul>
+    <% for (let i in errors) { %>
+    <li class="error">- <%= errors[i].msg %></li>
+    <% } %>
+  </ul>
+</div>
+<% } %>

@@ -1,0 +1,36 @@
+<h1>Category: <%= category.name %></h1>
+<p>Description: <%= category.description %></p>
+<div id="category-items">
+  <h3>Items in <%= category.name %></h3>
+  <% if (category_items.length > 0) { %>
+  <ul>
+    <% for (let i in category_items) { %>
+    <li> -
+      <a href=<%= category_items[i].url %>>
+        <%= category_items[i].name %>
+      </a>
+    </li>
+    <% } %>
+    <% } else { %>
+    <p>There are no items in this category.</p>
+    <% } %>
+  </ul>
+</div>
+<hr>
+<div class="manage-links">
+  <a href="/category/<%= category._id %>/update">Update</a> <a href="/category/<%= category._id %>/delete">Delete</a>
+</div>
+<style>
+  #category-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #category-items>ul {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+</style>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %> | Fruits and Vegetables Inventory Shop</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <nav id="nav">
+        <h2>Navigation</h2>
+        <ul>
+          <li><a class="navigation--links" href="/">Home</a></li>
+          <li><a class="navigation--links" href="/category/create">Create Category</a></li>
+          <li><a class="navigation--links" href="/item/create">Create Item</a></li>
+        </ul>
+      </nav>
+      <section id="route-section">
+        <%- include(content, {title, ...props}); %>
+      </section>
+    </main>
+  </body>
+</html>

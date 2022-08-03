@@ -1,0 +1,39 @@
+<h1>Welcome to our grocery shop!</h1>
+<div id="categories-list">
+  <h3>Available Categories</h3>
+  <ul>
+    <% for (let i in categories) { %>
+    <li>
+      -
+      <a href=<%= categories[i].url %>>
+        <%= categories[i].name %>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+</div>
+<style>
+  #route-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #route-section>h1 {
+    margin: 0;
+  }
+
+  #categories-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #categories-list>ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 10px;
+    gap: 10px;
+    font-size: 1.25rem;
+  }
+</style>

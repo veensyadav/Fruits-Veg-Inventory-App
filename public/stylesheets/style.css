@@ -1,0 +1,98 @@
+:root {
+  --nav-padding: 30px
+}
+
+body {
+  margin: 0;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  margin: 10px 0;
+}
+h2 {
+  margin: 8px 0;
+}
+h3 {
+  margin: 6px 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#main {
+  display: flex;
+  gap: 10px;
+  box-sizing: border-box;
+  height: 100vh;
+  border: 2px solid black;
+  border-bottom: none;
+}
+
+#nav {
+  border-right: 2px solid black;
+  box-sizing: border-box;
+  padding: var(--nav-padding);
+  height: 100%;
+}
+
+#nav > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.navigation--links {
+  font-size: 1.25rem;
+}
+
+#nav > hr {
+  border-color: black;
+}
+
+#route-section {
+  padding: 30px 0;
+  box-sizing: border-box;
+}
+
+.form {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.form > .form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.submit-button {
+  cursor: pointer;
+}
+
+.errors > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.error {
+  color: red;
+  padding: 2px;
+}
+
+.manage-links {
+  display: flex;
+  justify-content: space-between;
+}

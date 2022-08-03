@@ -1,0 +1,37 @@
+<h1><%= title %></h1>
+<% if (category_items.length > 0) { %>
+<p>You need to delete the following items before attempting to delete <strong><%= category.name %></strong>:</p>
+<div id="category-items">
+  <ul>
+    <% for (let i in category_items) { %>
+    <li> -
+      <a href=<%= category_items[i].url %>>
+        <%= category_items[i].name %>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+</div>
+<% } else { %>
+<p>Are you sure you want to delete <strong><%= category.name %></strong>?</p>
+<form method="POST">
+  <button type="submit" class="submit-button">Yes</button>
+</form>
+<% } %>
+
+<%- include("../errors", { errors }); %>
+<style>
+  #category-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  #category-items>ul {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+</style>

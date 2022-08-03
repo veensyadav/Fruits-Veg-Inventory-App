@@ -1,0 +1,35 @@
+<h1><%= title %></h1>
+<form class="form" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" placeholder="Name of item" required="true" value="<%= item===undefined ? '' : item.name %>">
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <input id="description" name="description" type="text" placeholder="Description of item" required="true" value="<%= item===undefined ? '' : item.description %>">
+  </div>
+  <div class="form-group">
+    <label for="price">Price (per kg):</label>
+    <input id="price" name="price" type="number" placeholder="Price of item" required="true" value="<%= item===undefined ? '' : item.price %>">
+  </div>
+  <div class="form-group">
+    <label for="numberInStock">Number of killograms in stock:</label>
+    <input id="numberInStock" name="numberInStock" type="number" placeholder="Stock of item" required="true" value="<%= item===undefined ? '' : item.numberInStock %>">
+  </div>
+  <div class="form-group">
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+      <% for (let i in categories) { %>
+      <% const selected = item !== undefined && `${categories[i]._id}` === `${item.category}` ? "selected" : ""; %>
+      <option value=<%= categories[i]._id %> <%= selected %>><%= categories[i].name %></option>
+      <% } %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="image">Image:</label>
+    <input id="image" name="image" type="file">
+  </div>
+  <button type="submit" class="submit-button"><%= title %></button>
+</form>
+
+<%- include("../errors", { errors }); %>
